@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;family=Newsreader:ital,wght@0,400;1,400&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2b292f",
+                        "on-secondary-fixed": "#1f1635",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "surface-container-lowest": "#0f0d13",
+                        "primary-container": "#6750a4",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3e2e00",
+                        "on-secondary-container": "#bfb2da",
+                        "secondary": "#cdc0e9",
+                        "surface-variant": "#36343a",
+                        "tertiary-container": "#c9a74d",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "secondary-fixed": "#e9ddff",
+                        "on-surface-variant": "#cbc4d2",
+                        "surface-container": "#211f24",
+                        "secondary-container": "#4d4465",
+                        "primary-fixed": "#e9ddff",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3b383e",
+                        "surface-dim": "#141218",
+                        "surface-container-highest": "#36343a",
+                        "background": "#141218",
+                        "inverse-primary": "#6750a4",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#22005d",
+                        "surface-tint": "#cfbcff",
+                        "outline": "#948e9c",
+                        "on-tertiary-container": "#503d00",
+                        "surface-container-low": "#1d1b20",
+                        "on-primary-container": "#e0d2ff",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#494551",
+                        "surface": "#141218",
+                        "on-surface": "#e6e0e9",
+                        "tertiary": "#e7c365",
+                        "on-background": "#e6e0e9",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#381e72",
+                        "primary": "#cfbcff",
+                        "on-secondary": "#342b4b",
+                        "inverse-on-surface": "#322f35",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "inverse-surface": "#e6e0e9",
+                        "tertiary-fixed": "#ffdf93",
+                        "crimson-brand": "#E8001D",
+                        "pitch-black": "#090909"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Epilogue"],
+                        "hero-num": ["Epilogue"],
+                        "body-reading": ["Newsreader"],
+                        "micro-label": ["Space Grotesk"],
+                        "section-header": ["Space Grotesk"],
+                        "ui-label": ["Space Grotesk"],
+                        "brand": ["Syne"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                        "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @keyframes pulse-glow {
+            0% { transform: scale(1); opacity: 0.8; filter: drop-shadow(0 0 10px rgba(232, 0, 29, 0.4)); }
+            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 30px rgba(232, 0, 29, 0.7)); }
+            100% { transform: scale(1); opacity: 0.8; filter: drop-shadow(0 0 10px rgba(232, 0, 29, 0.4)); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        .terminal-cursor::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .bg-pitch-black { background-color: #090909; }
+        .text-crimson-brand { color: #E8001D; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-pitch-black text-on-surface antialiased overflow-hidden selection:bg-crimson-brand selection:text-white">
+<!-- Splash Screen Container -->
+<main class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Noise/Texture -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgZmCU6sMHhuISNAzSX_rZ3anUb8G9TpY5sw-_eltXK9L7_pWNw0QqpbeT_kfnJ9e_mH3CrEeumTszTmJdzSjsJUplVARayCnBm6fgWVb6BN6JI7YaGK32RYBsJgofrpWU9yOd2bLnZNOSnK76MSW-REHgOr-hDui-OLwmIBD23ELGlMZ3C8z8-6SdUp12prVklW_GZD87OBUjl3-LJzorPsaGKVRAQcu1mJMPHkMkfRm4FUnmMAb6FMumchwI5CjMC6gfBJQUf2Q');">
+</div>
+<!-- Central Identity Cluster -->
+<div class="relative z-10 flex flex-col items-center">
+<!-- Shield Logo Wrapper -->
+<div class="relative mb-8">
+<!-- Outer Glow Rings -->
+<div class="absolute inset-0 rounded-full bg-crimson-brand/10 blur-[100px] animate-pulse-glow"></div>
+<!-- Shield Icon -->
+<div class="animate-pulse-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-[120px] text-crimson-brand select-none" style="font-variation-settings: 'FILL' 1, 'wght' 200;">
+                        shield
+                    </span>
+</div>
+</div>
+<!-- Brand Name -->
+<h1 class="font-brand text-[48px] font-extrabold tracking-tighter text-[#F5F5F5] mb-2">
+                HarmFilter
+            </h1>
+<!-- Status Indicator -->
+<div class="flex flex-col items-center gap-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-crimson-brand animate-pulse"></div>
+<span class="font-micro-label text-micro-label uppercase tracking-[0.2em] text-[#8A8A8A] terminal-cursor">
+                        Initializing Security Layer
+                    </span>
+</div>
+</div>
+</div>
+<!-- Bottom Technical Data (Peripheral Vision) -->
+<div class="absolute bottom-12 left-0 right-0 px-8 flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<span class="font-micro-label text-micro-label uppercase text-[#2A2A2A]">Core Status</span>
+<span class="font-ui-label text-ui-label text-[#8A8A8A]">V 2.0.4 - ACTIVE</span>
+</div>
+<!-- Symmetric Tech Detail -->
+<div class="flex flex-col items-end gap-1">
+<span class="font-micro-label text-micro-label uppercase text-[#2A2A2A]">Encryption</span>
+<div class="flex gap-1">
+<div class="w-4 h-1 bg-crimson-brand/20"></div>
+<div class="w-4 h-1 bg-crimson-brand/40"></div>
+<div class="w-4 h-1 bg-crimson-brand/60"></div>
+<div class="w-4 h-1 bg-crimson-brand"></div>
+</div>
+</div>
+</div>
+<!-- Decorative Corners (Brutalist Edge) -->
+<div class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-[#2A2A2A]"></div>
+<div class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-[#2A2A2A]"></div>
+<div class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-[#2A2A2A]"></div>
+<div class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-[#2A2A2A]"></div>
+</main>
+<!-- Hidden Image Data For Aesthetic Context -->
+<div class="hidden">
+<img data-alt="Dark abstract background with subtle digital scanline patterns and deep crimson glowing accents, technical and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2fcx-_jlpy1Pl7E5c5esWSfH2vTLcQKuyUpeSM0PUfqc27AKNpK34PwgQDbNuB3CKdhGFYMEPgjw4LGFpdvUJbJWOQ2OdjjACISc393Z4z9SeyqzXVMvYZapYdb5lN80-Lnyxp2c2DyorOoCG85EH0OTYjM5Vm_w_irdZKkN15HKsBw8fao7Zps0-Gahf86mHOITB4q-tHLckxbVXS--lerugXuGsZpnqFn3uPhqbpv9uFKBkAHQ8xH6KIj9wu47oVGey63BkmGI"/>
+</div>
+</body></html>

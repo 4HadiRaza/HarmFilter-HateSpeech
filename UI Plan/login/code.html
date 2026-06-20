@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HarmFilter - Secure Access</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Newsreader:opsz,wght@6..72,400&amp;family=Syne:wght@700;800&amp;family=Space+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#2b292f",
+                    "on-secondary-fixed": "#1f1635",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "surface-container-lowest": "#0f0d13",
+                    "primary-container": "#6750a4",
+                    "on-error": "#690005",
+                    "on-tertiary": "#3e2e00",
+                    "on-secondary-container": "#bfb2da",
+                    "secondary": "#cdc0e9",
+                    "surface-variant": "#36343a",
+                    "tertiary-container": "#c9a74d",
+                    "secondary-fixed-dim": "#cdc0e9",
+                    "secondary-fixed": "#e9ddff",
+                    "on-surface-variant": "#cbc4d2",
+                    "surface-container": "#211f24",
+                    "secondary-container": "#4d4465",
+                    "primary-fixed": "#e9ddff",
+                    "tertiary-fixed-dim": "#e7c365",
+                    "error-container": "#93000a",
+                    "surface-bright": "#3b383e",
+                    "surface-dim": "#141218",
+                    "surface-container-highest": "#36343a",
+                    "background": "#141218",
+                    "inverse-primary": "#6750a4",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-fixed": "#22005d",
+                    "surface-tint": "#cfbcff",
+                    "outline": "#948e9c",
+                    "on-tertiary-container": "#503d00",
+                    "surface-container-low": "#1d1b20",
+                    "on-primary-container": "#e0d2ff",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#494551",
+                    "surface": "#141218",
+                    "on-surface": "#e6e0e9",
+                    "tertiary": "#e7c365",
+                    "on-background": "#e6e0e9",
+                    "primary-fixed-dim": "#cfbcff",
+                    "on-primary-fixed-variant": "#4f378a",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#381e72",
+                    "primary": "#cfbcff",
+                    "on-secondary": "#342b4b",
+                    "inverse-on-surface": "#322f35",
+                    "on-secondary-fixed-variant": "#4b4263",
+                    "inverse-surface": "#e6e0e9",
+                    "tertiary-fixed": "#ffdf93",
+                    "brand-red": "#E8001D",
+                    "brand-black": "#090909",
+                    "brand-gray": "#161616",
+                    "brand-border": "#2A2A2A"
+            },
+            "fontFamily": {
+                    "title-lg": ["Epilogue"],
+                    "hero-num": ["Epilogue"],
+                    "body-reading": ["Newsreader"],
+                    "micro-label": ["Space Grotesk"],
+                    "section-header": ["Space Grotesk"],
+                    "ui-label": ["Space Grotesk"],
+                    "syne": ["Syne"],
+                    "mono": ["Space Mono"]
+            },
+            "fontSize": {
+                    "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                    "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                    "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #090909;
+            color: #F5F5F5;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .floating-input:focus-within label,
+        .floating-input input:not(:placeholder-shown) + label {
+            transform: translateY(-24px) scale(0.85);
+            color: #E8001D;
+        }
+        .custom-underline:focus {
+            outline: none;
+            border-bottom-color: #E8001D;
+            box-shadow: 0 4px 12px -4px rgba(232, 0, 29, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-ui-label antialiased overflow-hidden">
+<!-- Auth Canvas -->
+<main class="relative min-h-screen flex flex-col items-center justify-center px-container-padding">
+<!-- Brand Identity Section -->
+<div class="mb-12 text-center">
+<div class="flex justify-center mb-6">
+<div class="w-16 h-16 border-2 border-brand-red flex items-center justify-center rotate-45">
+<span class="material-symbols-outlined -rotate-45 text-brand-red text-3xl" data-icon="shield">shield</span>
+</div>
+</div>
+<h1 class="font-syne text-[40px] leading-tight font-extrabold tracking-tighter uppercase mb-2">
+                Secure Access
+            </h1>
+<p class="font-section-header text-on-surface-variant opacity-60">
+                HARMFILTER PROTOCOL V2.0.4
+            </p>
+</div>
+<!-- Login Form Container -->
+<section class="w-full max-w-md space-y-10">
+<form action="#" class="space-y-8" method="POST">
+<!-- Email Field -->
+<div class="relative floating-input group">
+<input class="block w-full bg-transparent border-0 border-b border-brand-border py-3 px-0 font-mono text-lg text-on-surface focus:ring-0 focus:border-brand-red transition-all duration-300 custom-underline" id="email" name="email" placeholder=" " required="" type="email"/>
+<label class="absolute left-0 top-3 text-on-surface-variant pointer-events-none transition-all duration-300 origin-left font-section-header uppercase tracking-widest text-xs" for="email">
+                        Operator ID
+                    </label>
+<div class="absolute right-0 top-3 opacity-0 group-focus-within:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-brand-red text-sm" data-icon="fingerprint">fingerprint</span>
+</div>
+</div>
+<!-- Password Field -->
+<div class="relative floating-input group">
+<input class="block w-full bg-transparent border-0 border-b border-brand-border py-3 px-0 font-mono text-lg text-on-surface focus:ring-0 focus:border-brand-red transition-all duration-300 custom-underline" id="password" name="password" placeholder=" " required="" type="password"/>
+<label class="absolute left-0 top-3 text-on-surface-variant pointer-events-none transition-all duration-300 origin-left font-section-header uppercase tracking-widest text-xs" for="password">
+                        Encryption Key
+                    </label>
+<div class="absolute right-0 top-3 opacity-0 group-focus-within:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-brand-red text-sm" data-icon="key">key</span>
+</div>
+</div>
+<!-- Utilities -->
+<div class="flex items-center justify-between">
+<label class="flex items-center space-x-2 cursor-pointer group">
+<div class="relative w-4 h-4 border border-brand-border group-hover:border-brand-red transition-colors flex items-center justify-center">
+<input class="sr-only peer" type="checkbox"/>
+<div class="hidden peer-checked:block w-2 h-2 bg-brand-red"></div>
+</div>
+<span class="font-micro-label text-on-surface-variant uppercase tracking-widest">Persist Session</span>
+</label>
+<a class="font-micro-label text-brand-red hover:text-on-surface transition-colors uppercase tracking-widest" href="#">Forgot Credentials?</a>
+</div>
+<!-- Primary Action -->
+<div class="pt-4">
+<button class="group relative w-full bg-brand-red hover:bg-red-700 text-[#F5F5F5] py-4 px-6 font-ui-label font-bold uppercase tracking-[0.2em] transition-all duration-200 active:scale-95 shadow-[0_0_20px_rgba(232,0,29,0.3)]" type="submit">
+                        Initialize Link
+                        <div class="absolute top-0 right-0 p-2 opacity-30 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</button>
+</div>
+</form>
+<!-- Bottom Context -->
+<div class="flex flex-col items-center space-y-6 pt-4">
+<div class="flex items-center space-x-4 w-full">
+<div class="h-px bg-brand-border flex-grow"></div>
+<span class="font-micro-label text-on-surface-variant opacity-40 uppercase tracking-widest">External Nodes</span>
+<div class="h-px bg-brand-border flex-grow"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full">
+<button class="flex items-center justify-center space-x-2 border border-brand-border py-3 hover:bg-brand-gray transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+<span class="font-micro-label uppercase tracking-widest">Github</span>
+</button>
+<button class="flex items-center justify-center space-x-2 border border-brand-border py-3 hover:bg-brand-gray transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="cloud_done">cloud_done</span>
+<span class="font-micro-label uppercase tracking-widest">Google</span>
+</button>
+</div>
+<p class="font-micro-label text-on-surface-variant opacity-60 text-center uppercase tracking-widest leading-relaxed">
+                    New Operator? <a class="text-brand-red font-bold hover:underline" href="#">Apply for Clearance</a>
+</p>
+</div>
+</section>
+<!-- Decorative Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+<!-- Crimson Glow -->
+<div class="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-brand-red opacity-[0.03] rounded-full blur-[120px]"></div>
+<div class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-brand-red opacity-[0.03] rounded-full blur-[120px]"></div>
+<!-- Technical Grid -->
+<div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(#E8001D 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
+<!-- Status Indicators -->
+<div class="absolute top-8 left-8 flex items-center space-x-2 font-mono text-[10px] text-brand-red opacity-40">
+<div class="w-1.5 h-1.5 bg-brand-red animate-pulse"></div>
+<span>NODE: SECURE_71</span>
+</div>
+<div class="absolute bottom-8 right-8 flex flex-col items-end space-y-1 font-mono text-[10px] text-on-surface-variant opacity-40">
+<span>LATENCY: 12ms</span>
+<span>STATUS: ENCRYPTED</span>
+</div>
+</div>
+</main>
+<!-- Navigation suppressed per Destination Rule for Login Screen -->
+</body></html>

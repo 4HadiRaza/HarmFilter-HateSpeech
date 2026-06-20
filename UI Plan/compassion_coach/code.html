@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Newsreader:opsz,wght@6..72,400;500&amp;family=Syne:wght@700;800&amp;family=Space+Mono&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#2b292f",
+                        "on-secondary-fixed": "#1f1635",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "surface-container-lowest": "#0f0d13",
+                        "primary-container": "#6750a4",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3e2e00",
+                        "on-secondary-container": "#bfb2da",
+                        "secondary": "#cdc0e9",
+                        "surface-variant": "#36343a",
+                        "tertiary-container": "#c9a74d",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "secondary-fixed": "#e9ddff",
+                        "on-surface-variant": "#cbc4d2",
+                        "surface-container": "#211f24",
+                        "secondary-container": "#4d4465",
+                        "primary-fixed": "#e9ddff",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3b383e",
+                        "surface-dim": "#141218",
+                        "surface-container-highest": "#36343a",
+                        "background": "#090909",
+                        "inverse-primary": "#6750a4",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#22005d",
+                        "surface-tint": "#cfbcff",
+                        "outline": "#948e9c",
+                        "on-tertiary-container": "#503d00",
+                        "surface-container-low": "#1d1b20",
+                        "on-primary-container": "#e0d2ff",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#494551",
+                        "surface": "#141218",
+                        "on-surface": "#e6e0e9",
+                        "tertiary": "#e7c365",
+                        "on-background": "#e6e0e9",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#381e72",
+                        "primary": "#cfbcff",
+                        "on-secondary": "#342b4b",
+                        "inverse-on-surface": "#322f35",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "inverse-surface": "#e6e0e9",
+                        "tertiary-fixed": "#ffdf93",
+                        "brand-crimson": "#E8001D",
+                        "brand-void": "#090909",
+                        "brand-surface": "#111111",
+                        "brand-elevated": "#1C1C1C",
+                        "brand-border": "#2A2A2A"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "title-lg": ["Syne"],
+                        "hero-num": ["Epilogue"],
+                        "body-reading": ["Lora"],
+                        "micro-label": ["Space Mono"],
+                        "section-header": ["Space Grotesk"],
+                        "ui-label": ["Space Grotesk"]
+                    },
+                    fontSize: {
+                        "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-reading": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "micro-label": ["11px", {"lineHeight": "1.0", "fontWeight": "400"}],
+                        "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                        "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chat-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scrollbar::-webkit-scrollbar-track {
+            background: #090909;
+        }
+        .chat-scrollbar::-webkit-scrollbar-thumb {
+            background: #2A2A2A;
+        }
+        .typing-dot {
+            width: 4px;
+            height: 4px;
+            background: #8A8A8A;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-brand-void text-on-surface font-ui-label selection:bg-brand-crimson/30">
+<!-- Top Navigation Bar -->
+<header class="bg-[#090909] border-b border-[#2A2A2A] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full overflow-hidden border border-brand-border">
+<img alt="Compassion Coach" class="w-full h-full object-cover grayscale brightness-90" data-alt="Close-up portrait of a kind-faced woman with serene expression in high-contrast cinematic lighting with dark shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_-vxAmBrLyiHFTTOLPwZB8EBU1CyEwIPMxfs1ZfjxNwwefpkEHKCjsAEZssUVZlAhVk1nxhH95oGRUtU1VJI-Jv5BI6UebVohaN_WMovMDEkA3eDGj0CmA8qg88lMSuSHr17gOFsV8h-Ls4HmpBs4BibNzAjqdBSOX9Duk4GrebEuphPepIsy3sVxKi76unBrdDCmhp_MwrOtxF4lZH2v-raw5N0T_YY8tzWzjHdvbjdnmtLj0GRHWdD3loPdITOBHKGKkgAom_Q"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-brand-crimson rounded-full border-2 border-brand-void"></div>
+</div>
+<div>
+<h1 class="font-title-lg text-title-lg tracking-tight text-[#F5F5F5] uppercase">HarmFilter</h1>
+<p class="font-micro-label text-micro-label text-[#8A8A8A] uppercase tracking-wider">Compassion Coach Active</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#1C1C1C] transition-colors p-2 text-[#8A8A8A] active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Chat Interface -->
+<main class="flex flex-col h-[calc(100vh-64px-88px)] relative overflow-hidden">
+<!-- Background Texture -->
+<div class="absolute inset-0 z-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#E8001D 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
+<!-- Message List -->
+<div class="flex-1 overflow-y-auto chat-scrollbar p-4 space-y-6 z-10">
+<!-- Date Divider -->
+<div class="flex items-center justify-center">
+<span class="font-micro-label text-micro-label text-[#8A8A8A] uppercase tracking-widest bg-brand-void px-4 py-1 border border-brand-border">Safety Protocol: Initiated</span>
+</div>
+<!-- Coach Message -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full border border-brand-border bg-brand-elevated flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-crimson text-[16px]" data-icon="verified_user">verified_user</span>
+</div>
+<div class="space-y-1">
+<div class="bg-brand-elevated border border-brand-border p-4">
+<p class="font-body-reading text-body-reading text-on-surface">
+                            Hello. I've noticed things have been a bit heavy lately. I'm here to provide a safe space for you to decompress. How is your internal environment feeling right now?
+                        </p>
+</div>
+<span class="font-micro-label text-micro-label text-[#8A8A8A]">COACH • 09:12 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-row-reverse items-start gap-3 max-w-[85%] ml-auto">
+<div class="w-8 h-8 rounded-full border border-brand-crimson/50 bg-brand-crimson/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-crimson text-[16px]" data-icon="person">person</span>
+</div>
+<div class="space-y-1 text-right">
+<div class="bg-brand-crimson p-4">
+<p class="font-body-reading text-body-reading text-[#F5F5F5]">
+                            Honestly, the pressure is building up. It feels like every notification is a new emergency.
+                        </p>
+</div>
+<span class="font-micro-label text-micro-label text-[#8A8A8A]">USER • 09:14 AM</span>
+</div>
+</div>
+<!-- Coach Message with Dynamic Content -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full border border-brand-border bg-brand-elevated flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-crimson text-[16px]" data-icon="verified_user">verified_user</span>
+</div>
+<div class="space-y-4">
+<div class="bg-brand-elevated border border-brand-border p-4">
+<p class="font-body-reading text-body-reading text-on-surface">
+                            That 'always-on' feeling is a heavy burden to carry. Let's try to isolate one thread. If we could mute the noise for just 5 minutes, what would your breath want to tell you?
+                        </p>
+</div>
+<!-- Technical Visualization -->
+<div class="bg-[#111111] border-l-2 border-brand-crimson p-3 space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-micro-label text-micro-label text-brand-crimson">CORTISOL_STRESS_MITIGATION</span>
+<span class="font-micro-label text-micro-label text-brand-crimson">ACTIVE</span>
+</div>
+<div class="h-1 bg-[#1F1F1F] w-full">
+<div class="h-full bg-brand-crimson w-2/3"></div>
+</div>
+</div>
+<span class="font-micro-label text-micro-label text-[#8A8A8A]">COACH • 09:15 AM</span>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-center gap-2">
+<div class="bg-brand-elevated border border-brand-border px-3 py-2">
+<span class="typing-dot animate-pulse"></span>
+<span class="typing-dot animate-pulse" style="animation-delay: 0.2s"></span>
+<span class="typing-dot animate-pulse" style="animation-delay: 0.4s"></span>
+</div>
+</div>
+</div>
+<!-- Input Area & Quick Replies -->
+<div class="bg-brand-void p-4 space-y-4 border-t border-brand-border">
+<!-- Quick Reply Chips -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="shrink-0 bg-brand-elevated border border-brand-border px-4 py-2 text-on-surface font-ui-label text-ui-label hover:border-brand-crimson transition-all active:scale-95">
+                    Help me breathe
+                </button>
+<button class="shrink-0 bg-brand-elevated border border-brand-border px-4 py-2 text-on-surface font-ui-label text-ui-label hover:border-brand-crimson transition-all active:scale-95">
+                    Isolate triggers
+                </button>
+<button class="shrink-0 bg-brand-elevated border border-brand-border px-4 py-2 text-on-surface font-ui-label text-ui-label hover:border-brand-crimson transition-all active:scale-95">
+                    Emergency mute
+                </button>
+<button class="shrink-0 bg-brand-elevated border border-brand-border px-4 py-2 text-on-surface font-ui-label text-ui-label hover:border-brand-crimson transition-all active:scale-95">
+                    Schedule break
+                </button>
+</div>
+<!-- Text Input -->
+<div class="relative flex items-center gap-2">
+<div class="relative flex-1 group">
+<input class="w-full bg-brand-void border border-brand-border py-4 pl-4 pr-12 text-on-surface font-ui-label focus:border-brand-crimson focus:ring-0 focus:outline-none transition-all placeholder:text-[#333333]" placeholder="SECURE MESSAGE_INPUT..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex gap-2">
+<span class="material-symbols-outlined text-[#333333] cursor-pointer hover:text-brand-crimson" data-icon="mic">mic</span>
+</div>
+</div>
+<button class="bg-brand-crimson text-[#F5F5F5] p-4 font-bold hover:brightness-110 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Navigation Shell -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 bg-[#161616] rounded-[20px] mx-4 mb-6 border border-[#2A2A2A] shadow-[0_4px_20px_rgba(232,0,29,0.15)]">
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+</a>
+<a class="relative flex items-center justify-center text-[#E8001D] after:content-[''] after:absolute after:-top-2 after:w-6 after:h-1 after:bg-[#E8001D] after:rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Epilogue:wght@400;700;800&amp;family=Newsreader:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e6e0e9",
+                    "secondary-fixed-dim": "#cdc0e9",
+                    "inverse-on-surface": "#322f35",
+                    "on-surface-variant": "#cbc4d2",
+                    "primary-fixed": "#e9ddff",
+                    "on-primary-container": "#e0d2ff",
+                    "on-surface": "#e6e0e9",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#6750a4",
+                    "on-primary-fixed": "#22005d",
+                    "tertiary-fixed": "#ffdf93",
+                    "surface-container-highest": "#36343a",
+                    "error-container": "#93000a",
+                    "surface": "#141218",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary": "#381e72",
+                    "on-tertiary-container": "#503d00",
+                    "tertiary-container": "#c9a74d",
+                    "tertiary": "#e7c365",
+                    "outline-variant": "#494551",
+                    "surface-tint": "#cfbcff",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-background": "#e6e0e9",
+                    "on-secondary-fixed-variant": "#4b4263",
+                    "outline": "#948e9c",
+                    "surface-variant": "#36343a",
+                    "surface-dim": "#141218",
+                    "surface-container-low": "#1d1b20",
+                    "surface-container": "#211f24",
+                    "primary": "#cfbcff",
+                    "on-error": "#690005",
+                    "inverse-primary": "#6750a4",
+                    "primary-fixed-dim": "#cfbcff",
+                    "on-primary-fixed-variant": "#4f378a",
+                    "surface-bright": "#3b383e",
+                    "on-secondary-container": "#bfb2da",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#2b292f",
+                    "secondary": "#cdc0e9",
+                    "surface-container-lowest": "#0f0d13",
+                    "on-secondary-fixed": "#1f1635",
+                    "background": "#141218",
+                    "tertiary-fixed-dim": "#e7c365",
+                    "secondary-container": "#4d4465",
+                    "on-tertiary": "#3e2e00",
+                    "on-secondary": "#342b4b",
+                    "secondary-fixed": "#e9ddff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "element-gap": "12px",
+                    "section-margin": "32px",
+                    "grid-columns": "12",
+                    "container-padding": "16px"
+            },
+            "fontFamily": {
+                    "hero-num": ["Epilogue"],
+                    "body-reading": ["Newsreader"],
+                    "section-header": ["Space Grotesk"],
+                    "micro-label": ["Space Grotesk"],
+                    "ui-label": ["Space Grotesk"],
+                    "title-lg": ["Epilogue"],
+                    "syne": ["Syne"],
+                    "mono": ["Space Mono"]
+            },
+            "fontSize": {
+                    "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                    "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                    "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-fail-gradient {
+            background: radial-gradient(circle at center, rgba(232, 0, 29, 0.08) 0%, rgba(9, 9, 9, 1) 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#090909] text-[#F5F5F5] min-h-screen flex flex-col font-mono overflow-hidden">
+<!-- Top Navigation Anchor (As defined in JSON) -->
+<header class="flex justify-between items-center w-full px-4 h-16 bg-[#090909] border-b-[1px] border-[#2A2A2A] docked full-width top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#E8001D]">menu</span>
+<span class="font-syne font-bold text-xl tracking-tighter text-[#F5F5F5]">HarmFilter</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono uppercase tracking-widest text-sm text-[#E8001D]">LEARN</span>
+<div class="w-8 h-8 rounded-full bg-[#1C1C1C] border border-[#2A2A2A] flex items-center justify-center overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close up minimalist profile avatar icon on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBFesPfkml_T-2q0Sbzk_YDsgaz3q1FVuST927cXqBgCkoKu-QjKBWg7fZbnLsvmL1y6pdXoVpZoLbOLCNLD1I7WkzOSb8W8_notNl3asVRXr7JVhL_Ty8aZ3v_9guEXiEYTEqaIAVWp02jY0A2hl9-8hpSl9lTEzK4svC4PLqL9mWGQopMWhetqaGFYeRj4LQLlV1pAWwV7XNZmeQEHbZp1AxUw_3UGQFwiKFdelWS7Dy5V8HTFij3uZ3w4o4wvEY05XB6mkIY0Y"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 py-12 relative bg-fail-gradient">
+<!-- Fail Visual Identity -->
+<div class="relative mb-8">
+<div class="w-24 h-24 rounded-full border-2 border-[#E8001D] flex items-center justify-center bg-[#E8001D]/10">
+<span class="material-symbols-outlined text-[#E8001D] text-4xl" style="font-variation-settings: 'wght' 600;">refresh</span>
+</div>
+<!-- Decorative Glow -->
+<div class="absolute inset-0 bg-[#E8001D]/20 blur-2xl rounded-full -z-10"></div>
+</div>
+<!-- Headline & Results -->
+<div class="text-center space-y-2 mb-12">
+<h1 class="font-syne font-extrabold text-[30px] leading-tight text-[#F5F5F5]">Keep Practicing!</h1>
+<div class="flex flex-col items-center">
+<span class="font-syne font-extrabold text-[48px] text-[#F5F5F5]">4 / 10</span>
+<!-- Custom Score Bar -->
+<div class="w-64 h-2 bg-[#1F1F1F] mt-4 overflow-hidden">
+<div class="h-full bg-[#E8001D] w-[40%]"></div>
+</div>
+</div>
+</div>
+<!-- Points Banner -->
+<div class="w-full max-w-md bg-[#161616] border-l-4 border-[#E8001D] p-6 mb-12 flex items-start gap-4">
+<span class="material-symbols-outlined text-[#E8001D]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">error</span>
+<p class="font-mono text-sm leading-relaxed text-[#8A8A8A]">
+                You didn't pass this time. Score 80% or above to earn points.
+            </p>
+</div>
+<!-- Action Grid -->
+<div class="w-full max-w-md space-y-4">
+<button class="w-full py-5 bg-[#E8001D] text-[#F5F5F5] font-syne font-bold text-base tracking-wider hover:opacity-90 active:scale-95 transition-all duration-200 uppercase">
+                TRY AGAIN
+            </button>
+<button class="w-full py-5 bg-transparent border border-[#2A2A2A] text-[#F5F5F5] font-syne font-bold text-base tracking-wider hover:border-[#E8001D] hover:text-[#E8001D] active:scale-95 transition-all duration-200 uppercase">
+                BACK TO LEARN
+            </button>
+</div>
+</main>
+<!-- Floating Navigation Shell (As defined in JSON) -->
+<!-- Suppression logic: Displaying as it is a top-level module conclusion -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-4 py-2">
+<div class="bg-[#161616]/90 backdrop-blur-md border border-[#2A2A2A] rounded-full w-[90%] max-w-md flex justify-around items-center p-2 shadow-[0px_4px_20px_rgba(232,0,29,0.15)]">
+<div class="text-[#8A8A8A] p-3 hover:text-[#F5F5F5] transition-all duration-200">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div class="text-[#E8001D] bg-[#E8001D]/10 rounded-full p-3 transition-all duration-200">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div class="text-[#8A8A8A] p-3 hover:text-[#F5F5F5] transition-all duration-200">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div class="text-[#8A8A8A] p-3 hover:text-[#F5F5F5] transition-all duration-200">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</div>
+</nav>
+</body></html>

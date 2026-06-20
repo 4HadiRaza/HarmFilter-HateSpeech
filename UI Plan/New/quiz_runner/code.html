@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HarmFilter Quiz Runner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #090909;
+            color: #F5F5F5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-lora { font-family: 'Lora', serif; }
+        .font-mono-label { font-family: 'Space Mono', monospace; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2b292f",
+                      "on-secondary-fixed": "#1f1635",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "surface-container-lowest": "#0f0d13",
+                      "primary-container": "#6750a4",
+                      "on-error": "#690005",
+                      "on-tertiary": "#3e2e00",
+                      "on-secondary-container": "#bfb2da",
+                      "secondary": "#cdc0e9",
+                      "surface-variant": "#36343a",
+                      "tertiary-container": "#c9a74d",
+                      "secondary-fixed-dim": "#cdc0e9",
+                      "secondary-fixed": "#e9ddff",
+                      "on-surface-variant": "#cbc4d2",
+                      "surface-container": "#211f24",
+                      "secondary-container": "#4d4465",
+                      "primary-fixed": "#e9ddff",
+                      "tertiary-fixed-dim": "#e7c365",
+                      "error-container": "#93000a",
+                      "surface-bright": "#3b383e",
+                      "surface-dim": "#141218",
+                      "surface-container-highest": "#36343a",
+                      "background": "#141218",
+                      "inverse-primary": "#6750a4",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-primary-fixed": "#22005d",
+                      "surface-tint": "#cfbcff",
+                      "outline": "#948e9c",
+                      "on-tertiary-container": "#503d00",
+                      "surface-container-low": "#1d1b20",
+                      "on-primary-container": "#e0d2ff",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#494551",
+                      "surface": "#141218",
+                      "on-surface": "#e6e0e9",
+                      "tertiary": "#e7c365",
+                      "on-background": "#e6e0e9",
+                      "primary-fixed-dim": "#cfbcff",
+                      "on-primary-fixed-variant": "#4f378a",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#381e72",
+                      "primary": "#cfbcff",
+                      "on-secondary": "#342b4b",
+                      "inverse-on-surface": "#322f35",
+                      "on-secondary-fixed-variant": "#4b4263",
+                      "inverse-surface": "#e6e0e9",
+                      "tertiary-fixed": "#ffdf93"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "title-lg": ["Epilogue"],
+                      "hero-num": ["Epilogue"],
+                      "body-reading": ["Newsreader"],
+                      "micro-label": ["Space Grotesk"],
+                      "section-header": ["Space Grotesk"],
+                      "ui-label": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                      "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                      "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#090909] min-h-screen flex flex-col font-['Space_Grotesk']">
+<!-- Top Navigation Anchor (Shared Component Mapping) -->
+<header class="bg-[#090909] border-b border-[#2A2A2A] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#1C1C1C] flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-[18px] text-[#8A8A8A]">close</span>
+</div>
+<span class="text-xl font-black text-[#F5F5F5] uppercase tracking-widest font-['Epilogue']">HarmFilter</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#8A8A8A] font-mono-label text-[12px] tracking-tight">QUIZ_ID: 08-X</span>
+<span class="material-symbols-outlined text-[#E8001D]">security</span>
+</div>
+</div>
+</header>
+<!-- Quiz Linear Progress Bar -->
+<div class="w-full bg-[#1F1F1F] h-1.5 sticky top-16 z-40">
+<div class="bg-[#E8001D] h-full w-[65%] shadow-[0_0_10px_rgba(232,0,29,0.5)] transition-all duration-500"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col px-4 pt-8 pb-32 max-w-2xl mx-auto w-full">
+<!-- Question Meta -->
+<div class="mb-6 flex justify-between items-end">
+<div>
+<p class="font-mono-label text-[#8A8A8A] text-[10px] uppercase tracking-[0.2em] mb-1">Step 07 of 12</p>
+<h2 class="font-title-lg text-title-lg text-[#F5F5F5]">Digital Footprint Analysis</h2>
+</div>
+<div class="bg-[#1C1C1C] border border-[#2A2A2A] px-3 py-1 rounded-sm">
+<span class="font-mono-label text-[#E8001D] text-[12px] font-bold">+250 XP</span>
+</div>
+</div>
+<!-- Large Question Card (HFCard Style) -->
+<div class="bg-[#111111] p-6 mb-8 relative overflow-hidden group border-l-4 border-[#E8001D]">
+<div class="absolute top-0 right-0 p-2 opacity-10">
+<span class="material-symbols-outlined text-8xl">fingerprint</span>
+</div>
+<p class="font-lora text-[22px] leading-relaxed text-[#F5F5F5] relative z-10">
+                You receive a notification that a third-party app is requesting access to your "precise location" and "contact list" in exchange for a personalized avatar. What is the most secure protocol to follow?
+            </p>
+</div>
+<!-- Answer UI (Ranking/Chips) -->
+<div class="space-y-3">
+<p class="font-mono-label text-[#8A8A8A] text-[10px] uppercase tracking-[0.1em] mb-4">Rank the safest actions (1-4)</p>
+<button class="w-full bg-[#161616] border border-[#2A2A2A] p-4 flex items-center justify-between hover:border-[#E8001D] active:scale-95 duration-150 transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 flex items-center justify-center border border-[#2A2A2A] font-mono-label text-[#8A8A8A] group-hover:border-[#E8001D] group-hover:text-[#E8001D]">A</div>
+<span class="font-ui-label text-ui-label text-[#F5F5F5]">Deny all permissions and delete the application immediately.</span>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] group-hover:text-[#E8001D]">drag_handle</span>
+</button>
+<button class="w-full bg-[#161616] border border-[#2A2A2A] p-4 flex items-center justify-between hover:border-[#E8001D] active:scale-95 duration-150 transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 flex items-center justify-center border border-[#2A2A2A] font-mono-label text-[#8A8A8A] group-hover:border-[#E8001D] group-hover:text-[#E8001D]">B</div>
+<span class="font-ui-label text-ui-label text-[#F5F5F5]">Enable "Approximate Location" only and sync limited contacts.</span>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] group-hover:text-[#E8001D]">drag_handle</span>
+</button>
+<button class="w-full bg-[#161616] border border-[#2A2A2A] p-4 flex items-center justify-between border-[#E8001D] bg-[#1C1C1C] active:scale-95 duration-150 transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 flex items-center justify-center border border-[#E8001D] font-mono-label text-[#E8001D]">C</div>
+<span class="font-ui-label text-ui-label text-[#F5F5F5]">Research the developer's privacy policy before granting access.</span>
+</div>
+<span class="material-symbols-outlined text-[#E8001D]">check_circle</span>
+</button>
+<button class="w-full bg-[#161616] border border-[#2A2A2A] p-4 flex items-center justify-between hover:border-[#E8001D] active:scale-95 duration-150 transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 flex items-center justify-center border border-[#2A2A2A] font-mono-label text-[#8A8A8A] group-hover:border-[#E8001D] group-hover:text-[#E8001D]">D</div>
+<span class="font-ui-label text-ui-label text-[#F5F5F5]">Grant access temporarily and revoke it after the avatar is created.</span>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] group-hover:text-[#E8001D]">drag_handle</span>
+</button>
+</div>
+<!-- Submit Action Area -->
+<div class="mt-12">
+<button class="w-full bg-[#E8001D] text-[#F5F5F5] font-title-lg py-5 flex justify-center items-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(232,0,29,0.3)]">
+                SUBMIT ANSWER
+                <span class="material-symbols-outlined">double_arrow</span>
+</button>
+</div>
+</main>
+<!-- Bottom Explanation Slide-up (Bottom Sheet Simulation) -->
+<div class="fixed bottom-0 left-0 right-0 z-[60] px-2 pb-2">
+<div class="bg-[#1C1C1C] border border-[#2A2A2A] rounded-t-[24px] max-w-2xl mx-auto shadow-[0_-10px_40px_rgba(0,0,0,0.5)] transform translate-y-0">
+<!-- Handle -->
+<div class="flex justify-center py-3">
+<div class="w-12 h-1 bg-[#2A2A2A] rounded-full"></div>
+</div>
+<div class="px-6 pb-8 pt-2">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-[#E8001D]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#E8001D]" data-weight="fill">lightbulb</span>
+</div>
+<div>
+<h3 class="font-mono-label text-[#F5F5F5] text-[14px] font-bold">EXPLANATION_MODULE</h3>
+<p class="font-mono-label text-[#8A8A8A] text-[10px]">THREAT_MODEL: DATA_HARVESTING</p>
+</div>
+</div>
+<p class="font-body-reading text-[#F5F5F5] mb-6">
+                    Data harvesting apps often use "cosmetic rewards" (like avatars or filters) to bypass user skepticism. Your location and contacts are high-value metadata used to map your social graph. Total denial (A) is the safest, but informed consent through research (C) is the professional standard.
+                </p>
+<div class="bg-[#090909] border border-[#2A2A2A] p-4 flex items-center gap-4">
+<img class="w-12 h-12 rounded object-cover border border-[#2A2A2A]" data-alt="Modern dark tech interface showing complex data nodes and security encryption symbols in crimson red" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiTK8uTR_VxdNKuHhUrkgUG4c5f5mNI3NqfUaEp2Lq6P7z95pp4-Msmo2WmzByZ1GpBGdOw5IK9FX1ylSQPUQoG-NPLsLb343yLwWRdZYqbQsobZcXGqaoHDYPjk-utl_n9HmVAnu42qR-SbdUs6ydmbXLr6pB-XnFqfHmW3z2vtX-wg209h2yCDwHsAZs0Nlh6qXWPT4UXV7eiC870JUczA4H59b-BVSGhn0dKHO9djfrDSKi7jdI4cIaANdFHViMV_3FXKYkMu0"/>
+<div>
+<p class="font-mono-label text-[11px] text-[#E8001D]">RELATED_TOPIC</p>
+<p class="text-[13px] text-[#F5F5F5] font-bold uppercase">The API Privacy Handbook</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-[#8A8A8A]">open_in_new</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Nav Background Blur/Overlay for focus -->
+<div class="fixed inset-0 bg-black/60 z-[55] pointer-events-none opacity-50"></div>
+<!-- Shared BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 bg-[#161616] rounded-[20px] mx-4 mb-6 border border-[#2A2A2A] shadow-[0_4px_20px_rgba(232,0,29,0.15)] pointer-events-none opacity-20">
+<!-- Obscured/Inactive while in Quiz Mode -->
+<div class="flex items-center justify-center text-[#8A8A8A]"><span class="material-symbols-outlined">dashboard</span></div>
+<div class="flex items-center justify-center text-[#8A8A8A]"><span class="material-symbols-outlined">shield</span></div>
+<div class="relative flex items-center justify-center text-[#E8001D] after:content-[''] after:absolute after:-top-2 after:w-6 after:h-1 after:bg-[#E8001D] after:rounded-full"><span class="material-symbols-outlined">leaderboard</span></div>
+<div class="flex items-center justify-center text-[#8A8A8A]"><span class="material-symbols-outlined">menu_book</span></div>
+<div class="flex items-center justify-center text-[#8A8A8A]"><span class="material-symbols-outlined">person</span></div>
+</nav>
+</body></html>

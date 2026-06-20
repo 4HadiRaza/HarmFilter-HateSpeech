@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Epilogue:wght@400;700;800&amp;family=Newsreader:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e6e0e9",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "inverse-on-surface": "#322f35",
+                        "on-surface-variant": "#cbc4d2",
+                        "primary-fixed": "#e9ddff",
+                        "on-primary-container": "#e0d2ff",
+                        "on-surface": "#e6e0e9",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#6750a4",
+                        "on-primary-fixed": "#22005d",
+                        "tertiary-fixed": "#ffdf93",
+                        "surface-container-highest": "#36343a",
+                        "error-container": "#93000a",
+                        "surface": "#141218",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary": "#381e72",
+                        "on-tertiary-container": "#503d00",
+                        "tertiary-container": "#c9a74d",
+                        "tertiary": "#e7c365",
+                        "outline-variant": "#494551",
+                        "surface-tint": "#cfbcff",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-background": "#e6e0e9",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "outline": "#948e9c",
+                        "surface-variant": "#36343a",
+                        "surface-dim": "#141218",
+                        "surface-container-low": "#1d1b20",
+                        "surface-container": "#211f24",
+                        "primary": "#cfbcff",
+                        "on-error": "#690005",
+                        "inverse-primary": "#6750a4",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "surface-bright": "#3b383e",
+                        "on-secondary-container": "#bfb2da",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b292f",
+                        "secondary": "#cdc0e9",
+                        "surface-container-lowest": "#0f0d13",
+                        "on-secondary-fixed": "#1f1635",
+                        "background": "#141218",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "secondary-container": "#4d4465",
+                        "on-tertiary": "#3e2e00",
+                        "on-secondary": "#342b4b",
+                        "secondary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "element-gap": "12px",
+                        "section-margin": "32px",
+                        "grid-columns": "12",
+                        "container-padding": "16px"
+                    },
+                    "fontFamily": {
+                        "hero-num": ["Epilogue"],
+                        "body-reading": ["Newsreader"],
+                        "section-header": ["Space Grotesk"],
+                        "micro-label": ["Space Grotesk"],
+                        "ui-label": ["Space Grotesk"],
+                        "title-lg": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                        "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                        "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .green-glow {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#090909] text-[#F5F5F5] min-h-screen flex flex-col font-['Space_Grotesk'] overflow-hidden">
+<!-- Top AppBar (from JSON) -->
+<header class="bg-[#090909] text-[#E8001D] flex justify-between items-center w-full px-4 h-16 border-b-[1px] border-[#2A2A2A] docked full-width top-0 border-b flat-no-shadows z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#8A8A8A]">menu</span>
+<span class="font-['Syne'] font-bold text-xl tracking-tighter text-[#F5F5F5]">HarmFilter</span>
+</div>
+<div class="font-['Space_Mono'] uppercase tracking-widest text-sm">
+            LEARN
+        </div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#2A2A2A]">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional young man with a neutral expression, modern haircut, and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzDnRiMRu9Jd9Iu74-XtwDJfgD4SLDBKiQ89hGuLItZsG3QN5wtGnkTKvfOyBN3BH-Rjm-bMof85yhkds1sdYyqba_o-gwwDRRqTJCTFz9tzszMAXgQ-iX7H9PyVMwqg1wJbrUOwdshBiNFapnInn1v2f2RB4dJxQrwmrkY9KnOeeqZOH77CMH0VMb7LEceldeUg3dBg4m5awHMvwz4f-7ni8K_qmqe7dFe3Jtd9QrEY0_H2MXNXOIq2_elklg5AtHnJLqqOBRE4"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 relative">
+<!-- Status Label -->
+<span class="font-['Space_Mono'] text-[#8A8A8A] uppercase tracking-[0.2em] mb-8 text-[12px]">Assessment Complete</span>
+<!-- Animated Success Circle -->
+<div class="relative w-[120px] h-[120px] flex items-center justify-center mb-6">
+<!-- Background Glow -->
+<div class="absolute inset-0 rounded-full bg-green-500/10 blur-xl"></div>
+<!-- Main Circle -->
+<div class="w-full h-full rounded-full border-2 border-green-500 flex items-center justify-center green-glow">
+<span class="material-symbols-outlined text-green-500 !text-5xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">trophy</span>
+</div>
+</div>
+<!-- Headline -->
+<h1 class="font-['Syne'] font-extrabold text-[30px] text-[#F5F5F5] mb-2">Perfect Score!</h1>
+<!-- Score Ratio -->
+<div class="font-['Syne'] font-extrabold text-[48px] text-green-500 mb-8 leading-none">8 / 10</div>
+<!-- Score Bar -->
+<div class="w-full max-w-xs h-2 bg-[#1C1C1C] mb-12 overflow-hidden">
+<div class="h-full bg-green-500 w-[80%]"></div>
+</div>
+<!-- Points Banner -->
+<div class="w-full max-w-sm bg-[#161616] border-l-4 border-green-500 py-4 px-6 flex items-center gap-4 mb-16">
+<span class="material-symbols-outlined text-green-500">bolt</span>
+<span class="font-['Space_Grotesk'] font-medium text-[#F5F5F5]">You earned +50 points!</span>
+</div>
+<!-- Buttons Section -->
+<div class="flex gap-4 w-full max-w-sm">
+<button class="flex-1 py-4 border border-[#E8001D] text-[#E8001D] font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase hover:bg-[#E8001D]/5 transition-all active:scale-95">
+                RETRY
+            </button>
+<button class="flex-1 py-4 bg-[#E8001D] text-[#F5F5F5] font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase hover:brightness-110 transition-all active:scale-95 shadow-[0px_0px_20px_rgba(232,0,29,0.2)]">
+                BACK TO LEARN
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (from JSON) -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-4 py-2 bg-[#161616]/90 backdrop-blur-md fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full border border-[#2A2A2A] shadow-[0px_4px_20px_rgba(232,0,29,0.15)]">
+<div class="text-[#8A8A8A] p-3 hover:text-[#F5F5F5] transition-all duration-200 Active: scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div class="text-[#E8001D] bg-[#E8001D]/10 rounded-full p-3 hover:text-[#F5F5F5] transition-all duration-200 Active: scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="text-[#8A8A8A] p-3 hover:text-[#F5F5F5] transition-all duration-200 Active: scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div class="text-[#8A8A8A] p-3 hover:text-[#F5F5F5] transition-all duration-200 Active: scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-20 -z-10">
+<div class="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-[#E8001D]/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[300px] h-[300px] bg-green-500/5 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Newsreader:ital,wght@0,400;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2b292f",
+                      "on-secondary-fixed": "#1f1635",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "surface-container-lowest": "#0f0d13",
+                      "primary-container": "#6750a4",
+                      "on-error": "#690005",
+                      "on-tertiary": "#3e2e00",
+                      "on-secondary-container": "#bfb2da",
+                      "secondary": "#cdc0e9",
+                      "surface-variant": "#36343a",
+                      "tertiary-container": "#c9a74d",
+                      "secondary-fixed-dim": "#cdc0e9",
+                      "secondary-fixed": "#e9ddff",
+                      "on-surface-variant": "#cbc4d2",
+                      "surface-container": "#211f24",
+                      "secondary-container": "#4d4465",
+                      "primary-fixed": "#e9ddff",
+                      "tertiary-fixed-dim": "#e7c365",
+                      "error-container": "#93000a",
+                      "surface-bright": "#3b383e",
+                      "surface-dim": "#141218",
+                      "surface-container-highest": "#36343a",
+                      "background": "#141218",
+                      "inverse-primary": "#6750a4",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-primary-fixed": "#22005d",
+                      "surface-tint": "#cfbcff",
+                      "outline": "#948e9c",
+                      "on-tertiary-container": "#503d00",
+                      "surface-container-low": "#1d1b20",
+                      "on-primary-container": "#e0d2ff",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#494551",
+                      "surface": "#141218",
+                      "on-surface": "#e6e0e9",
+                      "tertiary": "#e7c365",
+                      "on-background": "#e6e0e9",
+                      "primary-fixed-dim": "#cfbcff",
+                      "on-primary-fixed-variant": "#4f378a",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#381e72",
+                      "primary": "#cfbcff",
+                      "on-secondary": "#342b4b",
+                      "inverse-on-surface": "#322f35",
+                      "on-secondary-fixed-variant": "#4b4263",
+                      "inverse-surface": "#e6e0e9",
+                      "tertiary-fixed": "#ffdf93",
+                      "crimson-accent": "#E8001D"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-margin": "32px",
+                      "container-padding": "16px",
+                      "grid-columns": "12",
+                      "gutter": "12px",
+                      "element-gap": "12px"
+              },
+              "fontFamily": {
+                      "title-lg": ["Epilogue"],
+                      "hero-num": ["Epilogue"],
+                      "body-reading": ["Newsreader"],
+                      "micro-label": ["Space Grotesk"],
+                      "section-header": ["Space Grotesk"],
+                      "ui-label": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                      "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                      "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .crimson-glow {
+            box-shadow: 0 0 20px rgba(232, 0, 29, 0.15);
+        }
+        .bento-card {
+            background: #111111;
+            transition: all 0.2s ease-in-out;
+        }
+        .bento-card:hover {
+            background: #161616;
+        }
+        .active-shield-glow {
+            background: radial-gradient(circle at center, rgba(232, 0, 29, 0.08) 0%, transparent 70%);
+        }
+        .terminal-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #E8001D; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#090909] text-on-surface font-ui-label min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="bg-[#090909] border-b border-[#2A2A2A] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#1C1C1C] flex items-center justify-center overflow-hidden border border-[#2A2A2A]">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a young man with sharp features and modern haircut in a tech-focused professional lighting setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdpBTFuk62i6ErkKh2SzswKHMcXVkupSQVBz08LjyqQYmnjSMZGVaXfYRYeReM3xrQnfKgIbTdBhseu3WueS52cHnyUB8tc5eMJCpWnlqL47GnhMJ1Dw7vQVNfSQ4rbSWEjVKRH58IrEol90u8qoQwCygIQ0NthAYJjDCu6NPrUFlEZ3gtfHQBH59ZwHZWl6VSTgm_Dco_vMw5mZPq3KIEWN_1E8nKxBgciNGJRp_piL42Iv1fdnPmo9sXqRUOQ604_UettViIcvo"/>
+</div>
+<h1 class="font-['Epilogue'] font-bold tracking-tighter text-[#F5F5F5] uppercase tracking-widest text-xl">HarmFilter</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-[#E8001D] hover:bg-[#1C1C1C] transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+</div>
+</header>
+<main class="px-4 py-6 max-w-5xl mx-auto">
+<!-- Hero Greeting & Quick Actions -->
+<section class="mb-section-margin">
+<div class="flex flex-col gap-1 mb-6">
+<span class="font-section-header text-crimson-accent text-section-header tracking-widest uppercase">System Operational</span>
+<h2 class="font-title-lg text-title-lg text-[#F5F5F5]">Welcome back, Agent</h2>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex-none bg-crimson-accent text-[#F5F5F5] px-6 py-3 rounded-none font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="radar">radar</span>
+<span class="font-ui-label uppercase">Scan Post</span>
+</button>
+<button class="flex-none bg-transparent border border-[#2A2A2A] text-[#F5F5F5] px-6 py-3 rounded-none font-bold flex items-center gap-2 active:scale-95 transition-transform hover:bg-[#1C1C1C]">
+<span class="material-symbols-outlined text-lg" data-icon="quiz">quiz</span>
+<span class="font-ui-label uppercase">Take Quiz</span>
+</button>
+<button class="flex-none bg-transparent border border-[#2A2A2A] text-[#8A8A8A] px-6 py-3 rounded-none font-bold flex items-center gap-2 active:scale-95 transition-transform hover:bg-[#1C1C1C]">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span class="font-ui-label uppercase">Filters</span>
+</button>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-12 gap-gutter mb-section-margin">
+<!-- Safety Score Pie Chart Concept -->
+<div class="col-span-12 md:col-span-8 bento-card p-container-padding flex flex-col justify-between h-64 relative overflow-hidden group">
+<div class="absolute inset-0 active-shield-glow opacity-50"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-section-header text-[#8A8A8A] uppercase text-[10px] tracking-widest mb-1">Safety Index</p>
+<h3 class="font-title-lg text-title-lg text-[#F5F5F5]">Defense Integrity</h3>
+</div>
+<div class="text-crimson-accent flex flex-col items-end">
+<span class="font-hero-num text-4xl leading-none">94%</span>
+<span class="font-micro-label text-[10px] uppercase">Optimal</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex items-end justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[#8A8A8A] font-micro-label uppercase">Threats Blocked</span>
+<span class="text-[#F5F5F5] font-title-lg">1,242</span>
+</div>
+<div class="flex flex-col border-l border-[#2A2A2A] pl-4">
+<span class="text-[#8A8A8A] font-micro-label uppercase">AI Confidence</span>
+<span class="text-[#F5F5F5] font-title-lg">99.8%</span>
+</div>
+</div>
+<!-- Simplified Visual representation of a pie/ring chart -->
+<div class="w-32 h-32 relative">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#1F1F1F" stroke-width="3"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E8001D" stroke-dasharray="94, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-crimson-accent" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Total Flags Card -->
+<div class="col-span-12 md:col-span-4 bento-card p-container-padding flex flex-col justify-between border border-[#2A2A2A] bg-[#1C1C1C]">
+<div>
+<span class="material-symbols-outlined text-crimson-accent mb-2" data-icon="flag">flag</span>
+<p class="font-section-header text-[#8A8A8A] uppercase text-[10px] tracking-widest mb-1">Total Flags</p>
+<h3 class="font-hero-num text-4xl text-[#F5F5F5]">42</h3>
+</div>
+<div class="mt-4">
+<div class="w-full bg-[#1F1F1F] h-1 mb-2">
+<div class="bg-crimson-accent h-full w-[42%]"></div>
+</div>
+<p class="font-micro-label text-[#8A8A8A] uppercase">+12% From Yesterday</p>
+</div>
+</div>
+<!-- Safety Trends Line Chart -->
+<div class="col-span-12 bento-card p-container-padding h-48 flex flex-col justify-between">
+<div class="flex justify-between items-center">
+<p class="font-section-header text-[#8A8A8A] uppercase text-[10px] tracking-widest">Activity Timeline</p>
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson-accent animate-pulse"></span>
+<span class="font-micro-label text-[#8A8A8A] uppercase">Live Sync</span>
+</div>
+</div>
+<div class="flex items-end gap-1 h-24 mt-4">
+<div class="flex-1 bg-crimson-accent opacity-20 h-[30%]"></div>
+<div class="flex-1 bg-crimson-accent opacity-30 h-[45%]"></div>
+<div class="flex-1 bg-crimson-accent opacity-40 h-[35%]"></div>
+<div class="flex-1 bg-crimson-accent opacity-60 h-[60%]"></div>
+<div class="flex-1 bg-crimson-accent opacity-50 h-[50%]"></div>
+<div class="flex-1 bg-crimson-accent opacity-80 h-[85%]"></div>
+<div class="flex-1 bg-crimson-accent opacity-100 h-[75%] border-t-2 border-crimson-accent"></div>
+<div class="flex-1 bg-[#1F1F1F] h-[40%]"></div>
+<div class="flex-1 bg-[#1F1F1F] h-[20%]"></div>
+<div class="flex-1 bg-[#1F1F1F] h-[30%]"></div>
+</div>
+<div class="flex justify-between font-micro-label text-[#5A5A5A] uppercase mt-2">
+<span>08:00</span>
+<span>12:00</span>
+<span>16:00</span>
+<span>20:00</span>
+<span>Now</span>
+</div>
+</div>
+</section>
+<!-- Recent Activity -->
+<section class="mb-12">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-section-header text-[#F5F5F5] uppercase tracking-widest">Recent Activity</h3>
+<button class="text-[#8A8A8A] font-micro-label uppercase hover:text-crimson-accent transition-colors">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Activity Item 1 -->
+<div class="bg-[#111111] p-4 flex items-center justify-between group hover:bg-[#161616] transition-colors border-l-2 border-crimson-accent">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-[#1C1C1C] flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-crimson-accent" data-icon="policy">policy</span>
+</div>
+<div>
+<p class="text-[#F5F5F5] font-ui-label">Harmful content detected in "Public_Chat_01"</p>
+<p class="text-[#8A8A8A] text-[11px] uppercase tracking-tighter">2 Minutes Ago • Social Module</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-crimson-accent/10 text-crimson-accent font-micro-label uppercase border border-crimson-accent/20">Critical</span>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-[#111111] p-4 flex items-center justify-between group hover:bg-[#161616] transition-colors border-l-2 border-[#2A2A2A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-[#1C1C1C] flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-[#8A8A8A]" data-icon="psychology">psychology</span>
+</div>
+<div>
+<p class="text-[#F5F5F5] font-ui-label">New mental wellness quiz available</p>
+<p class="text-[#8A8A8A] text-[11px] uppercase tracking-tighter">1 Hour Ago • Training</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-[#1C1C1C] text-[#8A8A8A] font-micro-label uppercase border border-[#2A2A2A]">Pending</span>
+</div>
+<!-- Activity Item 3 -->
+<div class="bg-[#111111] p-4 flex items-center justify-between group hover:bg-[#161616] transition-colors border-l-2 border-emerald-500/50">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-[#1C1C1C] flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-emerald-500" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="text-[#F5F5F5] font-ui-label">Weekly Safety Report generated</p>
+<p class="text-[#8A8A8A] text-[11px] uppercase tracking-tighter">4 Hours Ago • Reports</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 font-micro-label uppercase border border-emerald-500/20">Secure</span>
+</div>
+</div>
+</section>
+<!-- System Log Concept Card -->
+<section class="bg-[#111111] border border-[#2A2A2A] p-4 font-mono text-[11px]">
+<div class="flex items-center gap-2 mb-2 text-[#8A8A8A]">
+<span class="w-2 h-2 bg-crimson-accent"></span>
+<span>SYSTEM LOG: TERMINAL_042</span>
+</div>
+<div class="text-[#5A5A5A] space-y-1">
+<p>&gt; Initializing HarmFilter core V.4.2.1...</p>
+<p>&gt; Loading heuristic models... [OK]</p>
+<p>&gt; Neural net handshake... [SUCCESS]</p>
+<p class="text-[#8A8A8A]">&gt; Monitoring active streams: 42 <span class="terminal-blink border-r-2 ml-1"></span></p>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 bg-[#161616] rounded-[20px] mx-4 mb-6 border border-[#2A2A2A] shadow-[0_4px_20px_rgba(232,0,29,0.15)]">
+<a class="relative flex items-center justify-center text-[#E8001D] after:content-[''] after:absolute after:-top-2 after:w-6 after:h-1 after:bg-[#E8001D] after:rounded-full hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HarmFilter - Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Newsreader:wght@400&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2b292f",
+                        "on-secondary-fixed": "#1f1635",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "surface-container-lowest": "#0f0d13",
+                        "primary-container": "#6750a4",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3e2e00",
+                        "on-secondary-container": "#bfb2da",
+                        "secondary": "#cdc0e9",
+                        "surface-variant": "#36343a",
+                        "tertiary-container": "#c9a74d",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "secondary-fixed": "#e9ddff",
+                        "on-surface-variant": "#cbc4d2",
+                        "surface-container": "#211f24",
+                        "secondary-container": "#4d4465",
+                        "primary-fixed": "#e9ddff",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3b383e",
+                        "surface-dim": "#141218",
+                        "surface-container-highest": "#36343a",
+                        "background": "#141218",
+                        "inverse-primary": "#6750a4",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#22005d",
+                        "surface-tint": "#cfbcff",
+                        "outline": "#948e9c",
+                        "on-tertiary-container": "#503d00",
+                        "surface-container-low": "#1d1b20",
+                        "on-primary-container": "#e0d2ff",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#494551",
+                        "surface": "#141218",
+                        "on-surface": "#e6e0e9",
+                        "tertiary": "#e7c365",
+                        "on-background": "#e6e0e9",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#381e72",
+                        "primary": "#cfbcff",
+                        "on-secondary": "#342b4b",
+                        "inverse-on-surface": "#322f35",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "inverse-surface": "#e6e0e9",
+                        "tertiary-fixed": "#ffdf93",
+                        "brand-crimson": "#E8001D"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Epilogue"],
+                        "hero-num": ["Epilogue"],
+                        "body-reading": ["Newsreader"],
+                        "micro-label": ["Space Grotesk"],
+                        "section-header": ["Space Grotesk"],
+                        "ui-label": ["Space Grotesk"],
+                        "mono-stats": ["Space Mono"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "hero-num": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-reading": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "micro-label": ["10px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "section-header": ["14px", {"lineHeight": "1.0", "letterSpacing": "2px", "fontWeight": "700"}],
+                        "ui-label": ["13px", {"lineHeight": "1.0", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .crimson-glow {
+            box-shadow: 0 0 20px rgba(232, 0, 29, 0.2);
+        }
+        .podium-gradient {
+            background: linear-gradient(180deg, rgba(28, 28, 28, 0.8) 0%, rgba(17, 17, 17, 1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#090909] text-on-surface font-ui-label selection:bg-brand-crimson/30">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#090909] fixed top-0 left-0 right-0 z-50 border-b border-[#2A2A2A] h-16 flex justify-between items-center px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#2A2A2A]">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a young tech-savvy person with a neutral expression, neon lighting reflections, high-tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIaBhS6oj7ysPSKWkEiy2S_X4KXtaQ6TkDAoN_kDBYqnVC9T6p9JR8yLldFlj-ZZzOcDR2U4wqnoTI5s3ZD8umgdxNBk04qgpgIMNqSif5pvZy9p5UAVTMnotU9ilf3M6eCJUfPgckirMl9-tSWNhzQKyux3JyKhzzQ_oy4Mt32szPN9NeBoQqjUxJa7iMB-Pb6_W3lqQJGSzOppFfkAvTAmrsV9QghO8k6-jswPuuqMUpo9rYp2_wKk7SwMuiwwVBWofgdgy5QWc"/>
+</div>
+<span class="text-xl font-black text-[#F5F5F5] uppercase tracking-widest font-['Epilogue']">HarmFilter</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#E8001D] hover:bg-[#1C1C1C] transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">security</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-32 px-4 max-w-lg mx-auto">
+<!-- Hero Section: Top 3 Podium -->
+<section class="mb-12 pt-8">
+<div class="text-center mb-10">
+<h2 class="font-section-header text-section-header text-brand-crimson uppercase mb-2">Digital Sentinels</h2>
+<h1 class="font-title-lg text-title-lg text-[#F5F5F5]">Leaderboard</h1>
+</div>
+<div class="flex items-end justify-center gap-2 h-64">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center flex-1">
+<div class="relative mb-3">
+<div class="w-16 h-16 rounded-full border-2 border-[#2A2A2A] overflow-hidden">
+<img alt="Rank 2" class="w-full h-full object-cover" data-alt="Portrait of a young man with silver hair and glowing headphones in a dark cybernetic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAia9lFpN22McTBmrFhxA21EOMjUyvc9CkhNqEjhWGPJz6UeZZA-0HBJ5vndux54mfY8ec_vbHjl9lwjdoLrwjodJ_zCGErDDn2ntWEvd4b7l00Ee8EeCYffPikwPtSjomwOqEqDiOTFIdZD-OFAzO48zViESfE8yddMcoywKGfYmD703N-BhF5mk75lEGoF_5aJ9Uf77ICLCFiMYXZRaEK3RiZUE6PM91L9mok_Ynb5zAUeXhTykECUCdc65IRfvRDUV_iN3GCucw"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-[#2A2A2A] text-[#F5F5F5] font-mono-stats text-xs px-1.5 py-0.5 rounded border border-[#090909]">02</div>
+</div>
+<div class="podium-gradient w-full h-24 rounded-t-lg border-x border-t border-[#2A2A2A] flex flex-col items-center pt-4">
+<span class="font-ui-label text-xs text-[#8A8A8A] uppercase">V_GHOST</span>
+<span class="font-mono-stats text-brand-crimson font-bold">12.4K</span>
+</div>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center flex-1 z-10 scale-110">
+<div class="relative mb-4">
+<div class="w-20 h-20 rounded-full border-2 border-brand-crimson crimson-glow overflow-hidden">
+<img alt="Rank 1" class="w-full h-full object-cover" data-alt="Stylized portrait of a young woman with holographic interface elements floating near her eyes, dramatic red and black lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBweAG1WJCBGsSdkkhwCdqpNLdWaFOYHOSlGSapxQ7klPRvX6B5jr2ZzCZAELud-FWSzMkHCrPOoWKbsR9BzdSRgXdXRO83ELYQT4FbFCBDIu_4XP-8w6fPXuuZcoZ6Kq75jsuhKIosR8eOV-MQLlaimhA8KiNeacnLJCIaL4B3HT2L3pTcgzMci_uh-gQdR58RQfMepMaidT_IQMwwc3abDpbiADwq47j-bMw8yTNwMLh6eEbmw6veKtvm6ykjycw-o1QQEMW0mtc"/>
+</div>
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 text-brand-crimson">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-brand-crimson text-white font-mono-stats text-xs px-1.5 py-0.5 rounded shadow-lg">01</div>
+</div>
+<div class="bg-[#1C1C1C] w-full h-32 rounded-t-lg border-x border-t border-brand-crimson/30 flex flex-col items-center pt-4 crimson-glow">
+<span class="font-ui-label text-sm text-[#F5F5F5] font-bold uppercase tracking-tight">NULL_PTR</span>
+<span class="font-mono-stats text-brand-crimson text-lg font-black">15.8K</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center flex-1">
+<div class="relative mb-3">
+<div class="w-14 h-14 rounded-full border-2 border-[#2A2A2A] overflow-hidden">
+<img alt="Rank 3" class="w-full h-full object-cover" data-alt="Close up of an urban youth wearing a techwear mask and hood, glowing red accents in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-5Hug33QfHoql9jhcDHrVXXQGfZ70rggRk11g_CyeLShV7zMd9jhAaZmJJODKCwXpS2lwDYi-n7Daf6ZP1xorN0u23aIVwnDYL6L0nIDW8UcvGtsQLlxkj7jNtYbV_JWj3GE_ryTomRxWmbA6Rk7ixQHE53wvA08W7v3df7-HZwp6YDYVqDy7h7i-NkTx-PPxSwKBvn4KjZKjt4LAxFQobukJxLJtWUiT6XUfQmMOe1AC_ZMZwcXe-V6hdcPSjYfgrwKAt1ixb84"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-[#2A2A2A] text-[#F5F5F5] font-mono-stats text-xs px-1.5 py-0.5 rounded border border-[#090909]">03</div>
+</div>
+<div class="podium-gradient w-full h-20 rounded-t-lg border-x border-t border-[#2A2A2A] flex flex-col items-center pt-4">
+<span class="font-ui-label text-[10px] text-[#8A8A8A] uppercase">CYBER_K</span>
+<span class="font-mono-stats text-brand-crimson font-bold">10.1K</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats List -->
+<section class="space-y-3">
+<div class="flex justify-between px-4 pb-2 text-[#8A8A8A] font-section-header text-[10px] tracking-widest uppercase">
+<span>User Identity</span>
+<span>Points / Rank</span>
+</div>
+<!-- Current User (Highlighted) -->
+<div class="bg-[#1C1C1C] border border-brand-crimson/50 rounded-lg p-4 flex items-center justify-between shadow-[0_0_15px_rgba(232,0,29,0.1)]">
+<div class="flex items-center gap-4">
+<span class="font-hero-num text-xl text-brand-crimson font-black italic opacity-50 w-8">42</span>
+<div class="w-10 h-10 rounded-md border border-[#2A2A2A] overflow-hidden">
+<img alt="Current User" class="w-full h-full object-cover" data-alt="Tech-savvy youth portrait with cool blue and red lighting, minimalist profile style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa7WO_ftxtD0nEyiWZUc0jN3W8wsKd7lolSrTBVh92BtxIWyRbAqKUvptCQcpkF2kLRL4JGgd3ZOuLyYAsWHKd8y889D_ALxPSIWIkUbyihf6dIhAHyM3n93SWThl7Rl9rlyBVzUVJahX3PTDF09Jq05B_jVq9dwk908sP3ue8rIN12PjIep5O8NsUCv8_S3O7qcGaKtYrdbj5FkzrAk8J9NJky6D1YsXhP7zs06Bp_F003m46_HDfNA0BaVnBLHlBKEr0HWOtahQ"/>
+</div>
+<div>
+<p class="font-ui-label text-[#F5F5F5] font-bold">YOU (HARMFILTER_U)</p>
+<p class="font-micro-label text-brand-crimson uppercase">Active Defense</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-mono-stats text-[#F5F5F5] font-bold">4,120</p>
+<p class="font-micro-label text-[#8A8A8A]">LEVEL 12</p>
+</div>
+</div>
+<!-- List Item -->
+<div class="bg-[#111111] rounded-lg p-4 flex items-center justify-between border border-transparent hover:border-[#2A2A2A] transition-all">
+<div class="flex items-center gap-4">
+<span class="font-hero-num text-xl text-[#2A2A2A] font-black italic w-8">04</span>
+<div class="w-10 h-10 rounded-md border border-[#2A2A2A] overflow-hidden grayscale opacity-80">
+<img alt="Rank 4" class="w-full h-full object-cover" data-alt="Candid street style portrait of a person in a busy futuristic city at night, bokeh lights background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA69vooqQa6p7mUqtxyrjIfbw2rQg0PPiq2QEDGgIRS9whlQhjSiK7Een-__7vvNTjQHsEI9etKT-ob3efeXeFVAIZL2rUQRefA0vsGLu50tVa6EmJpESDm3gaPPA3-3qKa-RNMnao0FrchMKfzmaGP6NI8sfP06hod1Vo4vzfw22vrLaRYfa0N3Sti3q74YDl4_L9JK7Z2X5ikBCMXkdQ2xFR0K04PVVPNAcbbbEknMEoKplMUnSvuzVpoqEQVHAE0O3vfeUmK4Zg"/>
+</div>
+<div>
+<p class="font-ui-label text-[#8A8A8A]">Z_STRIKER</p>
+<p class="font-micro-label text-[#444444] uppercase">Verified Guardian</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-mono-stats text-[#F5F5F5]">9,850</p>
+<p class="font-micro-label text-[#444444]">LEVEL 28</p>
+</div>
+</div>
+<!-- List Item -->
+<div class="bg-[#111111] rounded-lg p-4 flex items-center justify-between border border-transparent hover:border-[#2A2A2A] transition-all">
+<div class="flex items-center gap-4">
+<span class="font-hero-num text-xl text-[#2A2A2A] font-black italic w-8">05</span>
+<div class="w-10 h-10 rounded-md border border-[#2A2A2A] overflow-hidden grayscale opacity-80">
+<img alt="Rank 5" class="w-full h-full object-cover" data-alt="Cyberpunk character portrait with glowing tattoos on face and neck, dark high contrast photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIIIv-pzwUE5jTQ40APqK5eg-tFr7tEdv5T_pA1B-biMJLw07WlbrEJOdGRugfu0T4IPXD0enMm8OmypyyHbnG7bo3aSIT4ZpzvJ-sgCXmEoAwlr1CnNyzQeg5Q7nWbx60Bq2I3ZCUA8kANg51vvvejs2FXoPm8FWXhpDCUAh5ssITTlgqHnmRGyUOHyv6nvJ4kGEqmHLf5C8u5S-DqkoBs6PtYTIcjGq-fdORz77K4CyNvfSctM4W_3hr2NTgXXUi039oyt09P7U"/>
+</div>
+<div>
+<p class="font-ui-label text-[#8A8A8A]">VOID_RUNNER</p>
+<p class="font-micro-label text-[#444444] uppercase">Shield Specialist</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-mono-stats text-[#F5F5F5]">8,420</p>
+<p class="font-micro-label text-[#444444]">LEVEL 24</p>
+</div>
+</div>
+<!-- List Item -->
+<div class="bg-[#111111] rounded-lg p-4 flex items-center justify-between border border-transparent hover:border-[#2A2A2A] transition-all">
+<div class="flex items-center gap-4">
+<span class="font-hero-num text-xl text-[#2A2A2A] font-black italic w-8">06</span>
+<div class="w-10 h-10 rounded-md border border-[#2A2A2A] overflow-hidden grayscale opacity-80">
+<img alt="Rank 6" class="w-full h-full object-cover" data-alt="Extreme close up of a digital eye with data overlays, dark aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe7m3u-DIT7MkIDSRrPOZtLkFm54YJ2VKaI1csR6e1VKrPJ1sQAkD91LhH07DGPk3GakQlOaNHKE43sZmVql0Z58pvZf7aec4Ow-0OQkosaLV22ZOFMzPp1C_w_efeEfvdaLBrdyclXa2viMSE6WGLK7ylK1wHik4vJ2p48UQQGEw6eU_R4B1OcbOKld5RKZlnsRzjToJHaMsDOVXbT8UpIoXmxQG90TIZVPZRWaFQNsFFoKsR62q3_cZUAcYhH9WCfStIig7Jksw"/>
+</div>
+<div>
+<p class="font-ui-label text-[#8A8A8A]">DATA_WRATH</p>
+<p class="font-micro-label text-[#444444] uppercase">Triage Expert</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-mono-stats text-[#F5F5F5]">7,990</p>
+<p class="font-micro-label text-[#444444]">LEVEL 21</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 bg-brand-crimson text-[#F5F5F5] font-section-header px-6 py-3 rounded-full flex items-center gap-2 shadow-lg active:scale-95 duration-200 crimson-glow z-40">
+<span class="material-symbols-outlined text-xl">vertical_align_center</span>
+        MY RANK
+    </button>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 bg-[#161616] rounded-[20px] mx-4 mb-6 border border-[#2A2A2A] shadow-[0_4px_20px_rgba(232,0,29,0.15)]">
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</a>
+<!-- Active Tab: Leaderboard -->
+<a class="relative flex items-center justify-center text-[#E8001D] after:content-[''] after:absolute after:-top-2 after:w-6 after:h-1 after:bg-[#E8001D] after:rounded-full active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

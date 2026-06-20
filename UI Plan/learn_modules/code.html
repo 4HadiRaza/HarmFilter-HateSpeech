@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HarmFilter Learn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Syne:wght@700;800&amp;family=Lora:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-high": "#2b292f",
+                "on-secondary-fixed": "#1f1635",
+                "on-tertiary-fixed-variant": "#594400",
+                "surface-container-lowest": "#0f0d13",
+                "primary-container": "#6750a4",
+                "on-error": "#690005",
+                "on-tertiary": "#3e2e00",
+                "on-secondary-container": "#bfb2da",
+                "secondary": "#cdc0e9",
+                "surface-variant": "#36343a",
+                "tertiary-container": "#c9a74d",
+                "secondary-fixed-dim": "#cdc0e9",
+                "secondary-fixed": "#e9ddff",
+                "on-surface-variant": "#cbc4d2",
+                "surface-container": "#211f24",
+                "secondary-container": "#4d4465",
+                "primary-fixed": "#e9ddff",
+                "tertiary-fixed-dim": "#e7c365",
+                "error-container": "#93000a",
+                "surface-bright": "#3b383e",
+                "surface-dim": "#141218",
+                "surface-container-highest": "#36343a",
+                "background": "#141218",
+                "inverse-primary": "#6750a4",
+                "on-tertiary-fixed": "#241a00",
+                "on-primary-fixed": "#22005d",
+                "surface-tint": "#cfbcff",
+                "outline": "#948e9c",
+                "on-tertiary-container": "#503d00",
+                "surface-container-low": "#1d1b20",
+                "on-primary-container": "#e0d2ff",
+                "error": "#ffb4ab",
+                "outline-variant": "#494551",
+                "surface": "#141218",
+                "on-surface": "#e6e0e9",
+                "tertiary": "#e7c365",
+                "on-background": "#e6e0e9",
+                "primary-fixed-dim": "#cfbcff",
+                "on-primary-fixed-variant": "#4f378a",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#381e72",
+                "primary": "#cfbcff",
+                "on-secondary": "#342b4b",
+                "inverse-on-surface": "#322f35",
+                "on-secondary-fixed-variant": "#4b4263",
+                "inverse-surface": "#e6e0e9",
+                "tertiary-fixed": "#ffdf93"
+            },
+            "fontFamily": {
+                "title-lg": ["Epilogue"],
+                "hero-num": ["Epilogue"],
+                "body-reading": ["Newsreader"],
+                "micro-label": ["Space Grotesk"],
+                "section-header": ["Space Grotesk"],
+                "ui-label": ["Space Grotesk"],
+                "syne": ["Syne"],
+                "lora": ["Lora"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #090909; }
+        .bg-card-gradient { background: linear-gradient(145deg, #161616, #111111); }
+        .completion-ring { transition: stroke-dashoffset 0.35s; transform: rotate(-90deg); transform-origin: 50% 50%; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-[#F5F5F5] min-h-screen pb-32">
+<header class="bg-[#090909] text-[#E8001D] border-b border-[#2A2A2A] fixed top-0 z-50 flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#1C1C1C] flex items-center justify-center border border-[#2A2A2A]">
+<img alt="User Profile" class="w-full h-full object-cover rounded-full" data-alt="minimalist close-up headshot of a person with a neutral background, professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFizwPAdYnlSDhJnCKJ2LhhnoARZLti8Z_YY1k4skBzeY0erasLGipdLR8S22s-9m-a10lmN86zFB7zHcPWPQrnYuXOG0uxdIRBZ3BxHd8eyRfaBV5PURfhAsMjToFxLf1H63Fzjl6el6l-ndfJCUEM9ak3I-dZm0Ae4_4Nx-frlNxDIBuGuSdDq8atTa4R--txMHcuIbgr_vwmm1Z1q73bxIkB-8GWpuSRNsfUBZX_go72N8pL1Uf5nqqimDzxjdgPgPfjZgV44c"/>
+</div>
+<span class="text-xl font-black text-[#F5F5F5] uppercase tracking-widest font-['Epilogue']">HarmFilter</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-[#1C1C1C] border border-[#2A2A2A] px-3 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-ui-label text-ui-label text-[#F5F5F5]">2,450 XP</span>
+</div>
+<span class="material-symbols-outlined text-[#F5F5F5]">security</span>
+</div>
+</header>
+<main class="pt-24 px-4 max-w-2xl mx-auto">
+<div class="mb-8">
+<h1 class="font-title-lg text-title-lg text-[#F5F5F5] mb-2">Digital Safety Library</h1>
+<p class="font-body-reading text-ui-label text-[#8A8A8A]">Master the art of online defense and identifying malicious content.</p>
+</div>
+<div class="flex bg-[#161616] p-1 rounded-full border border-[#2A2A2A] mb-8 w-full max-w-sm mx-auto">
+<button class="flex-1 py-2 text-center rounded-full font-ui-label text-ui-label bg-[#E8001D] text-[#F5F5F5] transition-all">English</button>
+<button class="flex-1 py-2 text-center rounded-full font-ui-label text-ui-label text-[#8A8A8A] hover:text-[#F5F5F5] transition-all">Roman Urdu</button>
+</div>
+<section class="grid gap-4">
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-[20px] flex items-center gap-4 hover:bg-[#1C1C1C] transition-all group">
+<div class="relative flex-shrink-0 w-16 h-16">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="16" stroke="#1F1F1F" stroke-width="3"></circle>
+<circle class="completion-ring" cx="18" cy="18" fill="none" r="16" stroke="#E8001D" stroke-dasharray="100, 100" stroke-dashoffset="25" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-micro-label text-micro-label text-[#E8001D]">75%</div>
+</div>
+<div class="flex-grow">
+<h3 class="font-syne text-[18px] text-[#F5F5F5] leading-tight mb-1 group-hover:text-[#E8001D] transition-colors">Social Engineering</h3>
+<p class="font-lora text-[13px] text-[#8A8A8A] leading-relaxed italic">Identify phishing hooks and psychological manipulation tactics.</p>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] group-hover:text-[#F5F5F5]">chevron_right</span>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-[20px] flex items-center gap-4 hover:bg-[#1C1C1C] transition-all group">
+<div class="relative flex-shrink-0 w-16 h-16">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="16" stroke="#1F1F1F" stroke-width="3"></circle>
+<circle class="completion-ring" cx="18" cy="18" fill="none" r="16" stroke="#E8001D" stroke-dasharray="100, 100" stroke-dashoffset="60" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-micro-label text-micro-label text-[#E8001D]">40%</div>
+</div>
+<div class="flex-grow">
+<h3 class="font-syne text-[18px] text-[#F5F5F5] leading-tight mb-1 group-hover:text-[#E8001D] transition-colors">Metadata &amp; Shadows</h3>
+<p class="font-lora text-[13px] text-[#8A8A8A] leading-relaxed italic">What your digital footprint reveals about your physical location.</p>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] group-hover:text-[#F5F5F5]">chevron_right</span>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-[20px] flex items-center gap-4 hover:bg-[#1C1C1C] transition-all group">
+<div class="relative flex-shrink-0 w-16 h-16">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="16" stroke="#1F1F1F" stroke-width="3"></circle>
+<circle class="completion-ring" cx="18" cy="18" fill="none" r="16" stroke="#E8001D" stroke-dasharray="100, 100" stroke-dashoffset="100" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-micro-label text-micro-label text-[#E8001D]">0%</div>
+</div>
+<div class="flex-grow">
+<h3 class="font-syne text-[18px] text-[#F5F5F5] leading-tight mb-1 group-hover:text-[#E8001D] transition-colors">Zero-Day Awareness</h3>
+<p class="font-lora text-[13px] text-[#8A8A8A] leading-relaxed italic">The mechanics of modern software vulnerabilities and exploits.</p>
+</div>
+<span class="material-symbols-outlined text-[#8A8A8A] group-hover:text-[#F5F5F5]">lock</span>
+</div>
+<div class="bg-[#161616] border border-[#E8001D]/20 p-6 rounded-[20px] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">model_training</span>
+</div>
+<h4 class="font-section-header text-section-header text-[#E8001D] mb-3">DAILY DRILL</h4>
+<p class="font-title-lg text-[20px] text-[#F5F5F5] mb-4">Master Dark Pattern Detection</p>
+<button class="bg-[#E8001D] text-[#F5F5F5] font-ui-label text-ui-label px-6 py-3 rounded-[12px] hover:scale-105 active:scale-95 transition-all">
+                    START DRILL (+150 XP)
+                </button>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 bg-[#161616] rounded-[20px] mx-4 mb-6 border border-[#2A2A2A] shadow-[0_4px_20px_rgba(232,0,29,0.15)]">
+<div class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<div class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all">
+<span class="material-symbols-outlined">leaderboard</span>
+</div>
+<div class="relative flex items-center justify-center text-[#E8001D] after:content-[''] after:absolute after:-top-2 after:w-6 after:h-1 after:bg-[#E8001D] after:rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<div class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all">
+<span class="material-symbols-outlined">person</span>
+</div>
+</nav>
+</body></html>

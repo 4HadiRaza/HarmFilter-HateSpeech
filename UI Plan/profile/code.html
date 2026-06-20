@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HarmFilter Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Newsreader:wght@400&amp;family=Space+Mono:wght@400;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2b292f",
+                        "on-secondary-fixed": "#1f1635",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "surface-container-lowest": "#0f0d13",
+                        "primary-container": "#6750a4",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3e2e00",
+                        "on-secondary-container": "#bfb2da",
+                        "secondary": "#cdc0e9",
+                        "surface-variant": "#36343a",
+                        "tertiary-container": "#c9a74d",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "secondary-fixed": "#e9ddff",
+                        "on-surface-variant": "#cbc4d2",
+                        "surface-container": "#211f24",
+                        "secondary-container": "#4d4465",
+                        "primary-fixed": "#e9ddff",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3b383e",
+                        "surface-dim": "#141218",
+                        "surface-container-highest": "#36343a",
+                        "background": "#141218",
+                        "inverse-primary": "#6750a4",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#22005d",
+                        "surface-tint": "#cfbcff",
+                        "outline": "#948e9c",
+                        "on-tertiary-container": "#503d00",
+                        "surface-container-low": "#1d1b20",
+                        "on-primary-container": "#e0d2ff",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#494551",
+                        "surface": "#141218",
+                        "on-surface": "#e6e0e9",
+                        "tertiary": "#e7c365",
+                        "on-background": "#e6e0e9",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#381e72",
+                        "primary": "#cfbcff",
+                        "on-secondary": "#342b4b",
+                        "inverse-on-surface": "#322f35",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "inverse-surface": "#e6e0e9",
+                        "tertiary-fixed": "#ffdf93"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Epilogue"],
+                        "hero-num": ["Epilogue"],
+                        "body-reading": ["Newsreader"],
+                        "micro-label": ["Space Grotesk"],
+                        "section-header": ["Space Grotesk"],
+                        "ui-label": ["Space Grotesk"],
+                        "syne": ["Syne"],
+                        "mono": ["Space Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .status-ring {
+            background: conic-gradient(from 0deg, #E8001D 0%, #E8001D 75%, transparent 75%, transparent 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#090909] text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#090909] border-b border-[#2A2A2A] h-16 flex justify-between items-center px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#E8001D]">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a young man with a serious expression, sharp lighting, high contrast aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAsEVwt_4XazRB2vVDuG4WYhLMRVjhKrkUTgER-Txe2YFGkFhP-qK3KCE0DSkemt_s8D1VSO2_A9KRyqgj9VnmNTSUXSgwLLndvXifiBonVJyn-eyONswy5X3oJOj_E_YbOumE-S5iMAX7rZ1TymMhs-_LQh9ye0rWWtJdR5tHMBGDZD1TGJff3yrsWk1oAk4BWoHaI3XzzWX_oGaJR1Pn20ri6iR1c57M7ZFIGJ-NQHmL4xCtbEBopLK-V7Ti-cvox4jg5Z2mG6c"/>
+</div>
+<span class="font-['Epilogue'] font-black text-xl text-[#F5F5F5] uppercase tracking-widest">HarmFilter</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-[#E8001D] hover:bg-[#1C1C1C] transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+</header>
+<main class="pt-24 px-4 max-w-2xl mx-auto">
+<!-- Hero Profile Section -->
+<section class="flex flex-col items-center mb-10">
+<div class="relative mb-6">
+<!-- Status Rings -->
+<div class="absolute inset-0 -m-3 rounded-full border-2 border-[#2A2A2A]"></div>
+<div class="absolute inset-0 -m-3 rounded-full border-2 border-transparent status-ring rotate-45 opacity-80"></div>
+<div class="w-32 h-32 rounded-full border-4 border-[#161616] overflow-hidden bg-[#111111] relative">
+<img class="w-full h-full object-cover" data-alt="Young professional man profile avatar, clean studio background, dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxxbB_NlElFUMalDncWdHbO5kcbCA1SIkm77mlPKa1cPoMBHBQwuWkQEev8s1OTcOYsI2zAqR9L_Qy9UtqU0LSpNhEha8nEttoF6Q5uJR2pCuSeOmoDd74uGlsONas4PZReUWyM8XEckSqi7UQHR__FR0MClQC3SWM1rwQ9oJ3p9wyrAvzmCrHpxWj8U24Vp0KXZC0gLzS0JMBGKGCYTXWhqJe5WH-qa40XhltNy-Cpz3v4ito7g6Nzf6_txensaL6yqOk0bnlR-g"/>
+<!-- Status Badge -->
+<div class="absolute bottom-1 right-1 w-6 h-6 bg-[#E8001D] border-2 border-[#161616] rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+<h1 class="font-syne text-3xl text-[#F5F5F5] mb-1">Alex_Guardian</h1>
+<p class="font-mono text-[12px] text-[#8A8A8A] tracking-widest uppercase mb-8">Level 4 Security Analyst</p>
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3 w-full">
+<div class="bg-[#111111] p-4 rounded-none border-l-2 border-[#E8001D] flex flex-col items-center">
+<span class="font-mono text-[10px] text-[#8A8A8A] uppercase mb-1">Points</span>
+<span class="font-hero-num text-2xl text-[#F5F5F5]">12.4k</span>
+</div>
+<div class="bg-[#111111] p-4 rounded-none border-l-2 border-[#E8001D] flex flex-col items-center">
+<span class="font-mono text-[10px] text-[#8A8A8A] uppercase mb-1">Rank</span>
+<span class="font-hero-num text-2xl text-[#F5F5F5]">#42</span>
+</div>
+<div class="bg-[#111111] p-4 rounded-none border-l-2 border-[#E8001D] flex flex-col items-center">
+<span class="font-mono text-[10px] text-[#8A8A8A] uppercase mb-1">Flags</span>
+<span class="font-hero-num text-2xl text-[#F5F5F5]">892</span>
+</div>
+</div>
+</section>
+<!-- Tabs Navigation -->
+<nav class="flex border-b border-[#2A2A2A] mb-8">
+<button class="flex-1 py-4 font-syne text-sm tracking-tighter text-[#E8001D] border-b-2 border-[#E8001D]">My Posts</button>
+<button class="flex-1 py-4 font-syne text-sm tracking-tighter text-[#8A8A8A] hover:text-[#F5F5F5] transition-colors">Reported</button>
+</nav>
+<!-- Historical Reports List (HFCard Pattern) -->
+<div class="space-y-4">
+<!-- HFCard 1 -->
+<article class="bg-[#161616] border border-[#2A2A2A] p-4 hover:border-[#E8001D] transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E8001D] text-lg" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-mono text-[10px] text-[#8A8A8A] uppercase tracking-widest">High Risk Flagged</span>
+</div>
+<span class="font-mono text-[10px] text-[#E8001D]">32m ago</span>
+</div>
+<h3 class="font-syne text-lg text-[#F5F5F5] mb-2 leading-tight">Automated Bot Swarm detected in #TechTrends</h3>
+<p class="font-body-reading text-[#8A8A8A] text-sm line-clamp-2 mb-4">Cluster of 14 newly created accounts posting identical suspicious links across multiple threads within 4 seconds.</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-[#161616] bg-[#2A2A2A] flex items-center justify-center text-[10px] font-bold">A</div>
+<div class="w-6 h-6 rounded-full border border-[#161616] bg-[#2A2A2A] flex items-center justify-center text-[10px] font-bold">B</div>
+<div class="w-6 h-6 rounded-full border border-[#161616] bg-[#2A2A2A] flex items-center justify-center text-[10px] font-bold">C</div>
+</div>
+<button class="font-mono text-[10px] text-[#F5F5F5] border border-[#2A2A2A] px-3 py-1 group-hover:bg-[#E8001D] group-hover:border-[#E8001D] transition-colors">VIEW LOGS</button>
+</div>
+</article>
+<!-- HFCard 2 -->
+<article class="bg-[#161616] border border-[#2A2A2A] p-4 hover:border-[#E8001D] transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#8A8A8A] text-lg">info</span>
+<span class="font-mono text-[10px] text-[#8A8A8A] uppercase tracking-widest">Sentiment Drift</span>
+</div>
+<span class="font-mono text-[10px] text-[#8A8A8A]">4h ago</span>
+</div>
+<h3 class="font-syne text-lg text-[#F5F5F5] mb-2 leading-tight">Neutral Filter Adjustment: #Gaming</h3>
+<p class="font-body-reading text-[#8A8A8A] text-sm line-clamp-2 mb-4">Manual override applied to restore conversational flow in high-heat threads. Toxicity threshold adjusted to 0.82.</p>
+<div class="flex items-center justify-between">
+<div class="px-2 py-1 bg-[#1C1C1C] rounded text-[10px] font-mono text-[#F5F5F5]">STATUS: RESOLVED</div>
+<button class="font-mono text-[10px] text-[#F5F5F5] border border-[#2A2A2A] px-3 py-1 group-hover:bg-[#E8001D] group-hover:border-[#E8001D] transition-colors">DETAILS</button>
+</div>
+</article>
+<!-- HFCard 3 -->
+<article class="bg-[#161616] border border-[#2A2A2A] p-4 hover:border-[#E8001D] transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E8001D] text-lg" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-mono text-[10px] text-[#8A8A8A] uppercase tracking-widest">Protocol Activation</span>
+</div>
+<span class="font-mono text-[10px] text-[#8A8A8A]">Yesterday</span>
+</div>
+<h3 class="font-syne text-lg text-[#F5F5F5] mb-2 leading-tight">Deepfake Media Suppression Event</h3>
+<p class="font-body-reading text-[#8A8A8A] text-sm line-clamp-2 mb-4">Interception of 3 highly-coordinated synthetic media injections targeting community leaders.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 bg-[#E8001D]"></span>
+<span class="w-1.5 h-1.5 bg-[#E8001D]"></span>
+<span class="w-1.5 h-1.5 bg-[#E8001D]"></span>
+</div>
+<button class="font-mono text-[10px] text-[#F5F5F5] border border-[#2A2A2A] px-3 py-1 group-hover:bg-[#E8001D] group-hover:border-[#E8001D] transition-colors">DECRYPT</button>
+</div>
+</article>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-[#E8001D] rounded-none flex items-center justify-center shadow-[0_4px_20px_rgba(232,0,29,0.3)] hover:scale-105 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-white text-3xl">edit</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 bg-[#161616] rounded-[20px] mx-4 mb-6 border border-[#2A2A2A] shadow-[0_4px_20px_rgba(232,0,29,0.15)]">
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">shield</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+</a>
+<a class="flex items-center justify-center text-[#8A8A8A] hover:text-[#F5F5F5] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+</a>
+<a class="relative flex items-center justify-center text-[#E8001D] after:content-[''] after:absolute after:-top-2 after:w-6 after:h-1 after:bg-[#E8001D] after:rounded-full active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+</body></html>
